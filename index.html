@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Agriculture</title>
+  <link rel="icon" type="image/x-icon" href="file:///C:/Users/ayush/OneDrive/Documents/Custom%20Office%20Templates/WhatsApp%20Image%202023-12-01%20at%2017.36.59_437203ca.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+    body {
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /* CSS for header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f5f5f5;
+    }
+
+    .header .logo {
+      font-size: 25px;
+      font-family: 'Sriracha', cursive;
+      color: #000;
+      text-decoration: none;
+      margin-left: 30px;
+    }
+
+    .nav-items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f5f5f5;
+      margin-right: 20px;
+    }
+
+    .nav-items a {
+      text-decoration: none;
+      color: #000;
+      padding: 35px 20px;
+    }
+
+    /* CSS for main element */
+    .intro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 520px;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("file:///C:/Users/ayush/OneDrive/Documents/iStock-898449496-768x512.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .intro h1 {
+      font-family: sans-serif;
+      font-size: 60px;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .intro p {
+      font-size: 20px;
+      color: #d1d1d1;
+      text-transform: uppercase;
+      margin: 20px 0;
+    }
+
+    .intro button {
+      background-color: #5edaf0;
+      color: #000;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4);
+    }
+
+    .achievements {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 80px;
+    }
+
+    .achievements .work {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .achievements .work i {
+      width: fit-content;
+      font-size: 50px;
+      color: #333333;
+      border-radius: 50%;
+      border: 2px solid #333333;
+      padding: 12px;
+    }
+
+    .achievements .work .work-heading {
+      font-size: 20px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .achievements .work .work-text {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    .about-me {
+      display: flex;
+      justify-content: center;
+      padding: 40px 80px;
+      align-items: center;
+      border-top: 2px solid #eeeeee;
+    }
+
+    .test {
+      padding: 40px 80px;
+    }
+
+    .test1 {
+      padding : 1px 140px;
+    }
+    .test2 {
+      padding : 1px 130px;
+    }
+
+    .about-me img {
+      width: 500px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .about-me-text h2 {
+      font-size: 30px;
+      color: #333333;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .about-me-text p {
+      font-size: 15px;
+      color: #585858;
+      margin: 10px 0;
+    }
+
+    /* CSS for footer */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #302f49;
+      padding: 40px 80px;
+    }
+
+    .footer .copy {
+      color: #fff;
+    }
+
+    .bottom-links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px 0;
+    }
+
+    .bottom-links .links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+    }
+
+    .bottom-links .links span {
+      font-size: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      margin: 10px 0;
+    }
+
+    .bottom-links .links a {
+      text-decoration: none;
+      color: #a1a1a1;
+      padding: 10px 20px;
+    }
+
+    .child {
+      height: 200px;
+      margin: 20px;
+      background-color: peachpuff;
+    }
+    .type_of_agri{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background-color: white;
+      /* margin: 0px 50px; */
+    }
+    
+    #targetDiv_types{
+      width: 350px;
+      height: 470px;
+      border-radius: 5px;
+      background-color:  rgb(255, 242, 226);
+      margin-top: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+    .testinomials{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background-color: white;
+      /* margin: 0px 50px; */
+    }
+    #targetDiv_types1{
+      width: 500px;
+      padding: 50px;
+      font-size: 20px;
+      border-radius: 25px;
+      height: auto;
+      background-color:  rgb(255, 242, 226);
+      margin-top: 15px;
+      padding: 20px;
+      text-align: center;
+    }
+    .contact{
+      width: 90%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 100px 20px;
+      border-radius: 5px;
+      background-color: rgb(255, 242, 226);
+    }
+    .left{
+      width: 50%;
+      height: 550px;
+      margin-left: 50px;
+    }
+    .right{
+      width: 50%;
+      height: 550px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href=>ST JOHNS SCHOOL</a>
+    <nav class="nav-items">
+      <a href="#"></a>
+      <a href="#"></a>
+      <a href="#"></a>
+    </nav>
+  </header>
+  <main>
+    <div class="intro">
+      <h1>Smart Agriculture</h1>
+      <p>"Innovation for sustainable growth."</p>
+    </div>
+    <div class="achievements">
+      <div class="work">
+        <img src="file:///C:/Users/ayush/OneDrive/Documents/WhatsApp%20Image%202023-11-24%20at%2020.12.52_59ce9c27%20-%20Copy.jpg" alt="Trulli" width="85" height="85">
+        <p class="work-heading">Project</p>
+        <p class="work-text">This project is based on Smart Agriculture technologies.</p>
+      </div>
+      <div class="work">
+        <img src="file:///C:/Users/ayush/OneDrive/Desktop/science%20project/images/WhatsApp%20Image%202023-11-24%20at%2020.12.52_fad886f5.jpg" alt="Trulli" width="85" height="85">
+        <p class="work-heading">Team</p>
+        <p class="work-text">Ayush Mall , Shreyan Shri , Harshit Verma</p>
+      </div>
+      <div class="work">
+        <img src="file:///C:/Users/ayush/OneDrive/Documents/WhatsApp%20Image%202023-11-24%20at%2020.12.52_77fe3f89.jpg" alt="Trulli" width="165" height="85">
+        <p class="work-heading">Helps and Resources</p>
+        <p class="work-text">Krishna Ma'am and other AI tools.</p>
+      </div>
+    </div>
+    <div class="test1">
+        <h1 style="color:rgb(172, 87, 87);">About</h1>
+    </div>
+
+
+    <div style="padding-left: 50px; padding-right:50px;";>
+        <div style= "background-color: rgb(255, 242, 226); padding-left: 5px">
+            <div class="about-me" >
+              <div class="about-me-text">
+                <br>
+                <br>
+                 <div id="targetDiv" >
+                   <p>
+                  <h1>Agriculture</h1>
+                  <h3 style="color:rgb(85, 83, 83);"> Agriculture is the practice of cultivating the soil, growing crops, and raising livestock for human use. It encompasses a wide range of activities, including planting and harvesting crops, managing livestock, and other practices aimed at producing food, fiber, and other products used by humans. Agriculture is a crucial aspect of human civilization, providing the foundation for food security and supporting various industries. </h3>
+                  <h1>Smart agriculture</h1>
+                  <h3 style="color:rgb(85, 83, 83);">Smart agriculture, also known as precision agriculture or precision farming, refers to the use of advanced technologies and data-driven approaches to optimize various aspects of agricultural production. The goal of smart agriculture is to improve efficiency, productivity, and sustainability in farming practices. This involves the integration of information and communication technologies (ICT) such as sensors, drones, GPS technology, and data analytics into traditional farming methods. </h3>
+                </p>
+                </div>
+              </div>
+              <img src="file:///C:/Users/ayush/OneDrive/Documents/Pictures/Saved%20Pictures/root_Screenshot-2023-10-26-225033.png" alt="me" style="padding-left: 100px;">
+            </div>
+         </div>
+     </div>
+     </div>
+      <div class="test2">
+        <h1 style="color:rgb(172, 87, 97);">Type of Smart Farming:</h1>
+        <br>
+    </div>
+    <!-- Type of Agriculture DIV start from here -->
+    <div class="type_of_agri">
+      <div id="targetDiv_types" >
+        <h1>Precision Farming</h1><br>
+        <p>
+          <h3 style="color:rgb(85, 83, 83)  ;">   Precision agriculture, also known as precision farming, is an approach to farming that utilizes technology and data-driven insights to optimize various aspects of agricultural production. The goal is to enhance efficiency, productivity, and sustainability by precisely tailoring farm management practices to the specific needs of different areas within a field. This is in contrast to traditional, one-size-fits-all farming methods.</h3>
+        </p>
+                  </div>
+      <div id="targetDiv_types">
+          <h1>Automated Machinery</h1><br>
+          <p>
+            <h3 style="color:rgb(85, 83, 83)  ;">Automated machinery in agriculture refers to the use of advanced technologies to perform tasks and operations on the farm with minimal or no human intervention. The integration of automation in agriculture aims to increase efficiency, reduce labor requirements, and optimize various processes.   </h3>
+          </p>
+      </div>
+      <div id="targetDiv_types">
+          <h1>Smart irrigation</h1><br>
+          <p>
+            <h3 style="color:rgb(85, 83, 83)  ;">Smart irrigation involves the use of advanced technologies and data-driven approaches to optimize the application of water in agriculture. The goal is to enhance water use efficiency, reduce water wastage, and improve overall crop yields.  </h3>
+          </p>
+      </div>
+    </div>
+    <div class="type_of_agri">
+      <div id="targetDiv_types" >
+        <h1>Crop Monitoring</h1><br>
+        <p>
+          <h3 style="color:rgb(85, 83, 83)  ;">   Crop monitoring involves the use of various technologies and methods to assess and track the health, growth, and conditions of crops throughout the growing season. Monitoring crops provides valuable information for farmers to make informed decisions, optimize resource use, and maximize yields.  </h3>
+        </p>
+      </div>
+      <div id="targetDiv_types">
+          <h1>Enhancing Livestock Management</h1><br>
+          <p>
+            <h3 style="color:rgb(85, 83, 83)  ;"> Enhancing livestock management integrates RFID, GPS tracking, and wearables for precise identification and health monitoring. Automation in feeding, breeding, and herding optimizes efficiency, while data analytics and robotics streamline operations. These technologies ensure sustainable and ethical practices, fostering optimal health, productivity, and well-being for livestock in modern farming. </h3>
+          </p>
+      </div>
+      <div id="targetDiv_types">
+          <h1>Challenges and Future Outlook</h1><br>
+          <p>
+            <h3 style="color:rgb(85, 83, 83)  ;">  Challenges in livestock management include technology adoption barriers, data security concerns, and cost implications. The future outlook envisions overcoming these challenges through increased tech literacy, addressing privacy issues, and developing cost-effective solutions. Advancements in precision agriculture and data analytics are expected to further revolutionize sustainable and efficient livestock farming.                     </h3>
+          </p>
+      </div>
+    </div>
+    <div class="test1">
+      <h1 style="color:rgb(172, 87, 87);">The Educational Corner for Farmers (ECFF)</h1>
+  </div>
+
+
+  <div style="padding-left: 50px; padding-right:50px;";>
+      <div style= "background-color: rgb(255, 242, 226); padding-left: 5px">
+          <div class="about-me" >
+            <div class="about-me-text">
+              <br>
+              <br>
+               <div id="targetDiv" >
+    
+                 <p>
+                <h3>The Educational Corner for Farmers (ECFF) is a comprehensive resource for farmers of all levels, from beginners to experienced professionals. It offers a wide range of educational materials on a variety of topics, including:
+                </h3>
+                <h3>* Farming practices: The ECFF provides information on sustainable farming practices, such as crop rotation, integrated pest management, and water conservation. It also offers information on new technologies and innovations that can help farmers improve their yields and efficiency.
+                </h3>
+                <h3>* Business management: The ECFF helps farmers develop the business skills they need to succeed. It offers information on topics such as financial management, marketing, and risk management.
+                </h3>
+                <h3>* Legal issues: The ECFF provides information on the legal issues that farmers face, such as land ownership, water rights, and labor laws.
+                </h3>
+                <h3>* Social and environmental issues: The ECFF helps farmers understand the social and environmental impacts of their operations. It offers information on topics such as climate change, biodiversity, and rural development.
+                </h3>
+                <br>
+                <h3>The ECFF offers a variety of educational materials, including:
+                </h3>
+                <h3>* Articles: The ECFF publishes a wide range of articles on topics related to farming, business, law, and social and environmental issues.
+                </h3>
+                <h3>* Videos: The ECFF produces educational videos on a variety of farming topics, including crop production, livestock management, and pest control.
+                </h3>
+                <h3>* Webinars: The ECFF hosts regular webinars on a variety of farming topics. Webinars are typically led by experts in the field and offer participants the opportunity to ask questions and learn from others.
+                </h3>
+                <h3>* Online courses: The ECFF offers a variety of online courses on farming topics. Courses are typically self-paced and offer participants the opportunity to learn at their own convenience.
+                </h3>
+                <br>
+                <h3>The ECFF also offers a variety of resources for farmers to connect with each other and with experts. These resources include:
+                </h3>
+                <h3>* Discussion forums: The ECFF hosts a variety of discussion forums where farmers can ask questions, share advice, and learn from each other.
+                </h3>
+                <h3>* Expert directory: The ECFF maintains a directory of experts who are available to answer questions and provide advice to farmers.
+                </h3>
+                <h3>* Events calendar: The ECFF maintains a calendar of events that are relevant to farmers, such as workshops, conferences, and trade shows.
+                </h3>
+                <br>
+                <h3>The ECFF is a valuable resource for farmers of all levels. It offers a wide range of educational materials and resources to help farmers improve their skills, knowledge, and businesses.</h3>
+                </p>
+              </div>
+            </div>
+            <img src="C:\Users\ayush\OneDrive\Desktop\science project\images\WhatsApp Image 2023-11-26 at 18.54.57_26c7f5db.jpg" alt="me" style="padding-left: 100px;">
+          </div>
+       </div>
+   </div>
+   </div>
+                
+    <!-- Type of Agriculture DIV ends from here -->
+    <div class="test2">
+      <h1 style="color:rgb(172, 87, 97);">CHECK OUT THIS VIDEO:</h1>
+      <br>
+    </div>
+    <video ></video>
+    <video src="assects/What is Smart Farming Technology_ _ Tech Baba.mp4"
+    alt="smart agriculture"
+    height="300px"
+    controls></video>
+
+    <!-- TESTINOMIALS Start from here -->
+    <div class="test2">
+      <h1 style="color:rgb(172, 87, 97);">TESTINOMIALS:</h1>
+      <br>
+    </div>
+    <div class="testinomials">
+      <div id="targetDiv_types1" >
+        <p>
+          <h3 style="color:rgb(85, 83, 83)  ;">These guys were great! I absolutely loved every aspect of using their services. Way to go team. 
+            <br> 
+            -Ayush Mall
+          </h3>
+        </p>
+      </div>
+      </div>
+    </div>
+    <div class="testinomials">
+      <div id="targetDiv_types1" >
+        <p>
+          <h3 style="color:rgb(85, 83, 83)  ;">Loved the experience to work with these guys. Way to work with the team in future as well. 
+            <br> 
+            -Shreyan Shri 
+          </h3>
+        </p>
+      </div>
+      </div>
+    </div>
+
+    <div class="testinomials">
+      <div id="targetDiv_types1" >
+        <p>
+          <h3 style="color:rgb(85, 83, 83)  ;">Wow, what an experience. Such a great team here. Highly recommend to anyone looking at this site right now!
+            <br>
+            -Harshit Verma
+          </h3>
+        </p>
+      </div>
+      <div id="targetDiv_types1">
+          <p>
+            <h3 style="color:rgb(85, 83, 83)  ;">Such a pleasant experience working with the team here. Highly recommend their services to anyone.
+              <br>
+              -Krishna singh
+            </h3>
+          </p>
+      </div>
+    </div>
+    <!-- TESTINOMIALS Ends from here -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<h3>Contact Form</h3>
+
+<div class="container">
+  <form action="https://formspree.io/f/xleyypzb"
+  method="post">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+      </div>
+      <footer class="footer">
+        <div class="copy">&copy; COPYRIGHT © 2023 SMART AGRICULTURE - ALL RIGHTS RESERVED.</div>
+        <div class="bottom-links">
+          <div class="links">
+            <span>SMART AGRICULTURE</span>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+          </div>
+          <div class="links">
+            <span></span>
+            <a href="#"><i class=""></i></a>
+            <a href="#"><i class=""></i></a>
+            <a href="#"><i class=""></i></a>
+          </div>
+        </div>
+      </footer>
+    </main>
+</body>
+
+</html>
